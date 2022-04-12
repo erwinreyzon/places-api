@@ -1,24 +1,24 @@
 ### Place Index
-GET http://localhost:3000/places
+GET http://localhost:3000/places.json
 
 ### Place Show
-GET http://localhost:3000/places/1
+GET http://localhost:3000/places/1.json
 
 ### Place Post
-POST http://localhost:3000/places
+POST http://localhost:3000/places.json
 Content-Type: application/json
 
 {
-  "name": "Parkplace",
-  "address": "Monopoly Rd"
+  "name": "Savemart",
+  "address": "Grocery Rd"
 }
 
 ### Place Patch
-PATCH http://localhost:3000/places/1
+PATCH http://localhost:3000/places/1.json
 Content-Type: application/json
 
 {
-  "address": "Random Dr"
+  "address": "Update Dr"
 }
 
 ### Place Destroy

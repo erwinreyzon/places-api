@@ -15,8 +15,12 @@ class PlacesController < ApplicationController
       name: params["name"],
       address: params["address"]
     )
-    place.save
-    render json: place
+    @place = place
+    if place.save
+      render template: "places/show"
+    else
+      render json: {errors: place.errors.full_messages}, status: 422
+    end
   end
 
   def update
