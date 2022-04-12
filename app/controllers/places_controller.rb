@@ -6,8 +6,8 @@ class PlacesController < ApplicationController
   end
 
   def show
-    place = Place.find_by(id: params[:id])
-    render json: place
+    @place = Place.find_by(id: params[:id])
+    render template: "places/show"
   end
 
   def create
