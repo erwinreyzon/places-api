@@ -24,11 +24,14 @@ class PlacesController < ApplicationController
   end
 
   def update
-    place = Place.find_by(id: params[:id])
-    place.name = params["name"] || place.name
-    place.address = params["address"] || place.address
-    place.save
-    render json: place
+    @place = Place.find_by(id: params[:id])
+    @place.name = params["name"] || @place.name
+    @place.address = params["address"] || @place.address
+    if @place.save
+      render template: "places/show"
+    else
+      render json: {error: movies.errors.full_messages}, status: 422
+    end
   end
 
   def destroy
