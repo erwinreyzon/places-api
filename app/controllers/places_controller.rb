@@ -5,4 +5,9 @@ class PlacesController < ApplicationController
     render json: places
   end
 
+  def show
+    place = Place.find_by(id: params[:id])
+    render json: place
+  end
+
 end
