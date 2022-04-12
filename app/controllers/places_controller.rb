@@ -19,4 +19,12 @@ class PlacesController < ApplicationController
     render json: place
   end
 
+  def update
+    place = Place.find_by(id: params[:id])
+    place.name = params["name"] || place.name
+    place.address = params["address"] || place.address
+    place.save
+    render json: place
+  end
+
 end
