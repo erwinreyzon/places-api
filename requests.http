@@ -1,0 +1,14 @@
+### Place Index
+GET http://localhost:3000/places
+
+### Place Show
+GET http://localhost:3000/places/1
+
+### Place Post
+POST http://localhost:3000/places
+Content-Type: application/json
+
+{
+  "name": "Parkplace",
+  "address": "Monopoly Rd"
+}
