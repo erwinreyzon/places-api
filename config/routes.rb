@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
 
-  # get "/places" => "places#index"
+  get "/places" => "places#index"
 
 end
